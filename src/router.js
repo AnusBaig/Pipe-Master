@@ -41,13 +41,51 @@ const router = new Router({
       path: '',
       component: () => import('./layouts/main/Main.vue'),
       children: [
+
+
         // =============================================================================
-        // Theme Routes
+        // Custom Routes
         // =============================================================================
         {
           path: '/',
-          redirect: '/dashboard/analytics'
+          name: 'splash',
+          component: () => import('./views/pages/custom/Splash.vue'),
+          meta: {
+            rule: 'editor'
+          }
         },
+        {
+          path: '/material',
+          name: 'Material',
+          component: () => import('./views/pages/custom/Material.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/requirement',
+          name: 'Requirement',
+          component: () => import('./views/pages/custom/Requirement.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/result',
+          name: 'Result',
+          component: () => import('./views/pages/custom/Result.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        
+        // =============================================================================
+        // Theme Routes
+        // =============================================================================
+        // {
+        //   path: '/',
+        //   redirect: '/dashboard/analytics'
+        // },
         {
           path: '/dashboard/analytics',
           name: 'dashboard-analytics',
