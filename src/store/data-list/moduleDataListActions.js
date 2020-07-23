@@ -12,7 +12,7 @@ import axios from '@/axios.js'
 export default {
   addItem ({ commit }, item) {
     return new Promise((resolve, reject) => {
-      axios.post('/api/data-list/products/', {item})
+      axios.post('/api/data-list/material/', {item})
         .then((response) => {
           commit('ADD_ITEM', Object.assign(item, {id: response.data.id}))
           resolve(response)
@@ -22,7 +22,7 @@ export default {
   },
   fetchDataListItems ({ commit }) {
     return new Promise((resolve, reject) => {
-      axios.get('/api/data-list/products')
+      axios.get('/api/data-list/material')
         .then((response) => {
           commit('SET_PRODUCTS', response.data)
           resolve(response)
@@ -42,7 +42,7 @@ export default {
   // },
   updateItem ({ commit }, item) {
     return new Promise((resolve, reject) => {
-      axios.post(`/api/data-list/products/${item.id}`, {item})
+      axios.post(`/api/data-list/material/${item.id}`, {item})
         .then((response) => {
           commit('UPDATE_PRODUCT', response.data)
           resolve(response)
@@ -52,7 +52,7 @@ export default {
   },
   removeItem ({ commit }, itemId) {
     return new Promise((resolve, reject) => {
-      axios.delete(`/api/data-list/products/${itemId}`)
+      axios.delete(`/api/data-list/material/${itemId}`)
         .then((response) => {
           commit('REMOVE_ITEM', itemId)
           resolve(response)

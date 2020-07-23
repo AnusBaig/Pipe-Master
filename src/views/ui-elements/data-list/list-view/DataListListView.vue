@@ -12,14 +12,14 @@
 
     <data-view-sidebar :isSidebarActive="addNewDataSidebar" @closeSidebar="toggleDataSidebar" :data="sidebarData" />
 
-    <vs-table ref="table" multiple v-model="selected" pagination :max-items="itemsPerPage" search :data="products">
+    <vs-table ref="table" multiple v-model="selected"  search :data="products">
 
       <div slot="header" class="flex flex-wrap-reverse items-center flex-grow justify-between">
 
-        <div class="flex flex-wrap-reverse items-center data-list-btn-container">
+        <!-- <div class="flex flex-wrap-reverse items-center data-list-btn-container"> -->
 
           <!-- ACTION - DROPDOWN -->
-          <vs-dropdown vs-trigger-click class="dd-actions cursor-pointer mr-4 mb-4">
+          <!-- <vs-dropdown vs-trigger-click class="dd-actions cursor-pointer mr-4 mb-4">
 
             <div class="p-4 shadow-drop rounded-lg d-theme-dark-bg cursor-pointer flex items-center justify-center text-lg font-medium w-32 w-full">
               <span class="mr-2">Actions</span>
@@ -57,22 +57,22 @@
               </vs-dropdown-item>
 
             </vs-dropdown-menu>
-          </vs-dropdown>
+          </vs-dropdown> -->
 
           <!-- ADD NEW -->
-          <div class="btn-add-new p-3 mb-4 mr-4 rounded-lg cursor-pointer flex items-center justify-center text-lg font-medium text-base text-primary border border-solid border-primary" @click="addNewData">
-              <feather-icon icon="PlusIcon" svgClasses="h-4 w-4" />
-              <span class="ml-2 text-base text-primary">Add New</span>
+          <div class="btn-add-new mx-auto p-3 mb-4 mr-4 rounded-lg cursor-pointer flex items-center justify-center text-lg font-medium text-base text-primary border border-solid border-primary" @click="addNewData">
+              <feather-icon icon="PlusIcon" svgClasses="h-7 w-7" />
+              <span class="ml-2 text-base text-primary text-lg">Add New</span>
           </div>
-        </div>
+        <!-- </div> -->
 
         <!-- ITEMS PER PAGE -->
-        <vs-dropdown vs-trigger-click class="cursor-pointer mb-4 mr-4 items-per-page-handler">
+        <!-- <vs-dropdown vs-trigger-click class="cursor-pointer mb-4 mr-4 items-per-page-handler">
           <div class="p-4 border border-solid d-theme-border-grey-light rounded-full d-theme-dark-bg cursor-pointer flex items-center justify-between font-medium">
             <span class="mr-2">{{ currentPage * itemsPerPage - (itemsPerPage - 1) }} - {{ products.length - currentPage * itemsPerPage > 0 ? currentPage * itemsPerPage : products.length }} of {{ queriedItems }}</span>
             <feather-icon icon="ChevronDownIcon" svgClasses="h-4 w-4" />
           </div>
-          <!-- <vs-button class="btn-drop" type="line" color="primary" icon-pack="feather" icon="icon-chevron-down"></vs-button> -->
+          <vs-button class="btn-drop" type="line" color="primary" icon-pack="feather" icon="icon-chevron-down"></vs-button>
           <vs-dropdown-menu>
 
             <vs-dropdown-item @click="itemsPerPage=4">
@@ -88,15 +88,15 @@
               <span>20</span>
             </vs-dropdown-item>
           </vs-dropdown-menu>
-        </vs-dropdown>
+        </vs-dropdown> -->
       </div>
 
       <template slot="thead">
-        <vs-th sort-key="name">Name</vs-th>
-        <vs-th sort-key="category">Category</vs-th>
+        <vs-th sort-key="name">Pieces * Length</vs-th>
+        <!-- <vs-th sort-key="category">Category</vs-th>
         <vs-th sort-key="popularity">Popularity</vs-th>
         <vs-th sort-key="order_status">Order Status</vs-th>
-        <vs-th sort-key="price">Price</vs-th>
+        <vs-th sort-key="price">Price</vs-th> -->
         <vs-th>Action</vs-th>
       </template>
 
@@ -105,10 +105,10 @@
             <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data">
 
               <vs-td>
-                <p class="product-name font-medium truncate">{{ tr.name }}</p>
+                <p class="product-name font-medium truncate">{{ tr.pieces + ' x ' + tr.length}}</p>
               </vs-td>
 
-              <vs-td>
+              <!-- <vs-td>
                 <p class="product-category">{{ tr.category | title }}</p>
               </vs-td>
 
@@ -122,11 +122,11 @@
 
               <vs-td>
                 <p class="product-price">${{ tr.price }}</p>
-              </vs-td>
+              </vs-td> -->
 
               <vs-td class="whitespace-no-wrap">
-                <feather-icon icon="EditIcon" svgClasses="w-5 h-5 hover:text-primary stroke-current" @click.stop="editData(tr)" />
-                <feather-icon icon="TrashIcon" svgClasses="w-5 h-5 hover:text-danger stroke-current" class="ml-2" @click.stop="deleteData(tr.id)" />
+                <feather-icon icon="EditIcon" svgClasses="w-7 h-7 hover:text-primary stroke-current" @click.stop="editData(tr)" />
+                <feather-icon icon="TrashIcon" svgClasses="w-7 h-7 hover:text-danger stroke-current" class="ml-2" @click.stop="deleteData(tr.id)" />
               </vs-td>
 
             </vs-tr>
@@ -183,19 +183,19 @@ export default {
       this.sidebarData = data
       this.toggleDataSidebar(true)
     },
-    getOrderStatusColor (status) {
-      if (status === 'on_hold')   return 'warning'
-      if (status === 'delivered') return 'success'
-      if (status === 'canceled')  return 'danger'
-      return 'primary'
-    },
-    getPopularityColor (num) {
-      if (num > 90)  return 'success'
-      if (num > 70)  return 'primary'
-      if (num >= 50) return 'warning'
-      if (num < 50)  return 'danger'
-      return 'primary'
-    },
+    // getOrderStatusColor (status) {
+    //   if (status === 'on_hold')   return 'warning'
+    //   if (status === 'delivered') return 'success'
+    //   if (status === 'canceled')  return 'danger'
+    //   return 'primary'
+    // },
+    // getPopularityColor (num) {
+    //   if (num > 90)  return 'success'
+    //   if (num > 70)  return 'primary'
+    //   if (num >= 50) return 'warning'
+    //   if (num < 50)  return 'danger'
+    //   return 'primary'
+    // },
     toggleDataSidebar (val = false) {
       this.addNewDataSidebar = val
     }
@@ -267,6 +267,7 @@ export default {
 
       .vs-table--search{
         padding-top: 0;
+        display: none;
 
         .vs-table--search-input {
           padding: 0.9rem 2.5rem;
@@ -290,6 +291,8 @@ export default {
 
       tr{
           box-shadow: 0 4px 20px 0 rgba(0,0,0,.05);
+        font-size: 1.12rem;
+
           td{
             padding: 20px;
             &:first-child{
@@ -311,6 +314,7 @@ export default {
       th {
         padding-top: 0;
         padding-bottom: 0;
+        font-size: 1.15rem;
 
         .vs-table-text{
           text-transform: uppercase;
