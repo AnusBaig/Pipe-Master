@@ -1411,15 +1411,7 @@ const router = new Router({
           meta: {
             rule: 'editor'
           }
-        },
-        // {
-        //   path: '/pages/maintenance',
-        //   name: 'page-maintenance',
-        //   component: () => import('@/views/pages/Maintenance.vue'),
-        //   meta: {
-        //     rule: 'editor'
-        //   }
-        // }
+        }
       ]
     },
     // Redirect to 404 page, if no match found

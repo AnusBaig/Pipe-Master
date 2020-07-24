@@ -61,7 +61,7 @@
 
           <!-- ADD NEW -->
           <div class="btn-add-new mx-auto p-3 mb-4 mr-4 rounded-lg cursor-pointer flex items-center justify-center text-lg font-medium text-base text-primary border border-solid border-primary" @click="addNewData">
-              <feather-icon icon="PlusIcon" svgClasses="h-7 w-7" />
+              <feather-icon icon="PlusIcon" svgClasses="h-6 w-6" />
               <span class="ml-2 text-base text-primary text-lg">Add New</span>
           </div>
         <!-- </div> -->
@@ -125,8 +125,8 @@
               </vs-td> -->
 
               <vs-td class="whitespace-no-wrap">
-                <feather-icon icon="EditIcon" svgClasses="w-7 h-7 hover:text-primary stroke-current" @click.stop="editData(tr)" />
-                <feather-icon icon="TrashIcon" svgClasses="w-7 h-7 hover:text-danger stroke-current" class="ml-2" @click.stop="deleteData(tr.id)" />
+                <feather-icon icon="EditIcon" svgClasses="w-6 h-6 hover:text-primary stroke-current" @click.stop="editData(tr)" />
+                <feather-icon icon="TrashIcon" svgClasses="w-6 h-6 hover:text-danger stroke-current" class="ml-2" @click.stop="deleteData(tr.id)" />
               </vs-td>
 
             </vs-tr>
@@ -320,7 +320,7 @@ export default {
       th {
         padding-top: 0;
         padding-bottom: 0;
-        font-size: 1.15rem;
+        font-size: 1.1rem;
 
         .vs-table-text{
           text-transform: uppercase;

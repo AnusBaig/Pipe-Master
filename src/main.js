@@ -17,6 +17,26 @@ import 'material-icons/iconfont/material-icons.css' //Material Icons
 import 'vuesax/dist/vuesax.css' // Vuesax
 Vue.use(Vuesax)
 
+if('serviceWorker' in navigator){
+  navigator.serviceWorker
+  .register('../serviceWorker.js')
+  .then(e=>console.log('[Service Worker] Registered'))
+  .catch(err=>console.log('[Service Worker] Error registering service worker: '+err))
+}
+
+window.addEventListener('beforeinstallprompt', function(e){
+  console.log('[Before-install-propmt] fired')
+  e.propmt()
+
+  e.userChoices.then(choiceResult=>{
+    console.log(choiceResult.outcome)
+
+    if(choiceResult.outcome === 'dismissed')
+      console.log('User cancelled installation')
+      else
+      console.log('User added to home screen')
+  })
+})
 
 // axios
 import axios from './axios.js'

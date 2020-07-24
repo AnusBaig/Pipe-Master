@@ -14,10 +14,28 @@
 
 <script>
 import Grid from '../../ui-elements/grid/vuesax/GridDesignConcept'
+import Loader from '../../components/vuesax/loading/LoadingDefault'
+import getResults from './getResults'
 
 export default{
+    data(){
+        return{
+            results:[]
+        }
+    },
     components:{
         Grid
+    },
+    created(){
+        // this.results = getResults()
+    },
+    mounted() {
+        this.$vs.loading()
+        this.results = getResults()
+
+        setTimeout(()=>{
+            this.$vs.loading.close()
+        },2000)
     }
 }
 </script>

@@ -125,8 +125,8 @@
               </vs-td> -->
 
               <vs-td class="whitespace-no-wrap">
-                <feather-icon icon="EditIcon" svgClasses="w-7 h-7 hover:text-primary stroke-current" @click.stop="editData(tr)" />
-                <feather-icon icon="TrashIcon" svgClasses="w-7 h-7 hover:text-danger stroke-current" class="ml-2" @click.stop="deleteData(tr.id)" />
+                <feather-icon icon="EditIcon" svgClasses="w-6 h-6 hover:text-primary stroke-current" @click.stop="editData(tr)" />
+                <feather-icon icon="TrashIcon" svgClasses="w-6 h-6 hover:text-danger stroke-current" class="ml-2" @click.stop="deleteData(tr.id)" />
               </vs-td>
 
             </vs-tr>
@@ -320,7 +320,7 @@ export default {
       th {
         padding-top: 0;
         padding-bottom: 0;
-        font-size: 1.15rem;
+        font-size: 1.1rem;
 
         .vs-table-text{
           text-transform: uppercase;
