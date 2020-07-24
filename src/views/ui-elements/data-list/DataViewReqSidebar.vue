@@ -193,16 +193,16 @@ export default {
           }
 
           if (this.dataId !== null && this.dataId >= 0) {
-            this.$store.dispatch('dataList/updateItem', obj).catch(err => { console.error(err) })
+            this.$store.dispatch('dataListView/updateItem', obj).catch(err => { console.error(err) })
           } else {
             delete obj.id
             // obj.popularity = 0
-            this.$store.dispatch('dataList/addItem', obj).catch(err => { console.error(err) })
+            this.$store.dispatch('dataListView/addItem', obj).catch(err => { console.error(err) })
           }
 
           this.$emit('closeSidebar')
           this.initValues()
-          this.$store.dispatch('dataList/fetchDataListItems')
+          this.$store.dispatch('dataListView/fetchDataListItems')
         }
       })
     },

@@ -14,7 +14,7 @@
             <img src="@/assets/images/pages/maintenance-2.png" alt="graphic-maintenance" class="mx-auto mb-4">
             <h1 class="sm:mx-0 mx-4 mb-6 text-5xl d-theme-heading-color">Under Maintenance!</h1>
             <p class="sm:mx-0 mx-4 mb-6 d-theme-text-inverse">paraphonic unassessable foramination Caulopteris worral Spirophyton encrimson esparcet aggerate chondrule restate whistler shallopy biosystematy area bertram plotting unstarting quarterstaff.</p>
-            <vs-button size="large" to="/">Back to Home</vs-button>
+            <vs-button size="large" to="/material">Back to Home</vs-button>
         </div>
     </div>
 </template>

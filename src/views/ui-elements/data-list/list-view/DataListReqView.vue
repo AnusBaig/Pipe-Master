@@ -134,16 +134,16 @@
         </template>
     </vs-table>
     
-    <div class="text-center">
-      <vs-button size="large" to="/requirement">Next</vs-button>
+    <div class="flex justify-around text-center">
+      <vs-button size="large" to="/material">Back</vs-button>
+      <vs-button size="large" to="/result">Next</vs-button>
     </div>
-  
   </div>
 </template>
 
 <script>
-import DataViewSidebar from '../DataViewSidebar.vue'
-import moduleDataList from '@/store/data-list/moduleDataList.js'
+import DataViewSidebar from '../DataViewReqSidebar'
+import moduleDataList from '@/store/data-list-req/moduleDataList.js'
 
 export default {
   components: {
@@ -169,7 +169,7 @@ export default {
       return 0
     },
     products () {
-      return this.$store.state.dataList.products
+      return this.$store.state.dataListView.products
     },
     queriedItems () {
       return this.$refs.table ? this.$refs.table.queriedResults.length : this.products.length
@@ -181,8 +181,8 @@ export default {
       this.toggleDataSidebar(true)
     },
     deleteData (id) {
-      this.$store.dispatch('dataList/removeItem', id).catch(err => { console.error(err) })
-      this.$store.dispatch('dataList/fetchDataListItems')
+      this.$store.dispatch('dataListView/removeItem', id).catch(err => { console.error(err) })
+      this.$store.dispatch('dataListView/fetchDataListItems')
     },
     editData (data) {
       // this.sidebarData = JSON.parse(JSON.stringify(this.blankData))
@@ -208,10 +208,10 @@ export default {
   },
   created () {
     if (!moduleDataList.isRegistered) {
-      this.$store.registerModule('dataList', moduleDataList)
+      this.$store.registerModule('dataListView', moduleDataList)
       moduleDataList.isRegistered = true
     }
-    this.$store.dispatch('dataList/fetchDataListItems')
+    this.$store.dispatch('dataListView/fetchDataListItems')
   },
   mounted () {
     this.isMounted = true

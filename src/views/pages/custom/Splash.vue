@@ -1,6 +1,6 @@
 <template>
   <div>
-      <maintenance></maintenance>
+      <Maintenance></Maintenance>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import Maintenance from '../Maintenance.vue'
 export default {
   components: {
-    maintenance: Maintenance
+    Maintenance
   }
 }
 </script>

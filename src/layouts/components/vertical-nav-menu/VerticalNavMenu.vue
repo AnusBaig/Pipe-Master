@@ -61,18 +61,18 @@
         <div class="shadow-bottom" v-show="showShadowBottom" />
 
         <!-- Menu Items -->
-        <!-- <component :is="scrollbarTag" ref="verticalNavMenuPs" class="scroll-area-v-nav-menu pt-2" :settings="settings" @ps-scroll-y="psSectionScroll" @scroll="psSectionScroll" :key="$vs.rtl">
+        <component :is="scrollbarTag" ref="verticalNavMenuPs" class="scroll-area-v-nav-menu pt-2" :settings="settings" @ps-scroll-y="psSectionScroll" @scroll="psSectionScroll" :key="$vs.rtl">
           <template v-for="(item, index) in menuItemsUpdated">
 
-            Group Header
+            <!-- Group Header -->
             <span v-if="item.header && !verticalNavMenuItemsMin" class="navigation-header truncate" :key="`header-${index}`">
               {{ $t(item.i18n) || item.header }}
             </span>
-            /Group Header
+            <!-- /Group Header -->
 
             <template v-else-if="!item.header">
 
-              Nav-Item
+              <!-- Nav-Item -->
               <v-nav-menu-item
                 v-if="!item.submenu"
                 :key="`item-${index}`"
@@ -86,7 +86,7 @@
                   <vs-chip class="ml-auto" :color="item.tagColor" v-if="item.tag && (isMouseEnter || !reduce)">{{ item.tag }}</vs-chip>
               </v-nav-menu-item>
 
-              Nav-Group
+              <!-- Nav-Group -->
               <template v-else>
                 <v-nav-menu-group
                   :key="`group-${index}`"
@@ -95,10 +95,10 @@
                   :groupIndex="index"
                   :open="isGroupActive(item)" />
               </template>
-              /Nav-Group
+              <!-- /Nav-Group -->
             </template>
           </template>
-        </component> -->
+        </component>
         <!-- /Menu Items -->
       </div>
     </vs-sidebar>

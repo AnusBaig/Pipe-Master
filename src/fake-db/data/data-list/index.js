@@ -17,6 +17,18 @@ const data = {
       'pieces': 7,
       'length': 9
     }
+  ],
+  reqs: [
+    {
+      'id': 1,
+      'pieces': 15,
+      'length': 8
+    },
+    {
+      'id': 2,
+      'pieces': 1,
+      'length': 2
+    }
   ]
 }
 
@@ -61,5 +73,50 @@ mock.onDelete(/\/api\/data-list\/material\/\d+/).reply((request) => {
 
   const itemIndex = data.products.findIndex((p) => p.id == itemId)
   data.products.splice(itemIndex, 1)
+  return [200]
+})
+
+////////
+
+mock.onGet('/api/data-list/requirement').reply(() => {
+  return [200, JSON.parse(JSON.stringify(data.reqs)).reverse()]
+})
+
+// POST : Add new Item
+mock.onPost('/api/data-list/requirement/').reply((request) => {
+
+  // Get event from post data
+  const item = JSON.parse(request.data).item
+
+  const length = data.reqs.length
+  let lastIndex = 0
+  if (length) {
+    lastIndex = data.reqs[length - 1].id
+  }
+  item.id = lastIndex + 1
+
+  data.reqs.push(item)
+
+  return [201, {id: item.id}]
+})
+
+// Update Product
+mock.onPost(/\/api\/data-list\/requirement\/\d+/).reply((request) => {
+
+  const itemId = request.url.substring(request.url.lastIndexOf('/') + 1)
+
+  const item = data.reqs.find((item) => item.id == itemId)
+  Object.assign(item, JSON.parse(request.data).item)
+
+  return [200, item]
+})
+
+// DELETE: Remove Item
+mock.onDelete(/\/api\/data-list\/requirement\/\d+/).reply((request) => {
+
+  const itemId = request.url.substring(request.url.lastIndexOf('/') + 1)
+
+  const itemIndex = data.reqs.findIndex((p) => p.id == itemId)
+  data.reqs.splice(itemIndex, 1)
   return [200]
 })

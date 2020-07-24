@@ -107,34 +107,34 @@ const router = new Router({
     //     // =============================================================================
     //     // Application Routes
     //     // =============================================================================
-    //     {
-    //       path: '/apps/todo',
-    //       redirect: '/apps/todo/all',
-    //       name: 'todo'
-    //     },
-    //     {
-    //       path: '/apps/todo/:filter',
-    //       component: () => import('./views/apps/todo/Todo.vue'),
-    //       meta: {
-    //         rule: 'editor',
-    //         parent: 'todo',
-    //         no_scroll: true
-    //       }
-    //     },
-    //     {
-    //       path: '/apps/chat',
-    //       name: 'chat',
-    //       component: () => import('./views/apps/chat/Chat.vue'),
-    //       meta: {
-    //         rule: 'editor',
-    //         no_scroll: true
-    //       }
-    //     },
-    //     {
-    //       path: '/apps/email',
-    //       redirect: '/apps/email/inbox',
-    //       name: 'email'
-    //     },
+        {
+          path: '/apps/todo',
+          redirect: '/apps/todo/all',
+          name: 'todo'
+        },
+        {
+          path: '/apps/todo/:filter',
+          component: () => import('./views/apps/todo/Todo.vue'),
+          meta: {
+            rule: 'editor',
+            parent: 'todo',
+            no_scroll: true
+          }
+        },
+        {
+          path: '/apps/chat',
+          name: 'chat',
+          component: () => import('./views/apps/chat/Chat.vue'),
+          meta: {
+            rule: 'editor',
+            no_scroll: true
+          }
+        },
+        {
+          path: '/apps/email',
+          redirect: '/apps/email/inbox',
+          name: 'email'
+        },
     //     {
     //       path: '/apps/email/:filter',
     //       component: () => import('./views/apps/email/Email.vue'),
@@ -167,20 +167,20 @@ const router = new Router({
     //         rule: 'editor'
     //       }
     //     },
-    //     {
-    //       path: '/apps/eCommerce/wish-list',
-    //       name: 'ecommerce-wish-list',
-    //       component: () => import('./views/apps/eCommerce/ECommerceWishList.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'eCommerce', url:'/apps/eCommerce/shop'},
-    //           { title: 'Wish List', active: true }
-    //         ],
-    //         pageTitle: 'Wish List',
-    //         rule: 'editor'
-    //       }
-    //     },
+        {
+          path: '/apps/eCommerce/wish-list',
+          name: 'ecommerce-wish-list',
+          component: () => import('./views/apps/eCommerce/ECommerceWishList.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'eCommerce', url:'/apps/eCommerce/shop'},
+              { title: 'Wish List', active: true }
+            ],
+            pageTitle: 'Wish List',
+            rule: 'editor'
+          }
+        },
     //     {
     //       path: '/apps/eCommerce/checkout',
     //       name: 'ecommerce-checkout',
@@ -438,314 +438,314 @@ const router = new Router({
     //     // =============================================================================
     //     // COMPONENT ROUTES
     //     // =============================================================================
-    //     {
-    //       path: '/components/alert',
-    //       name: 'component-alert',
-    //       component: () => import('@/views/components/vuesax/alert/Alert.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Alert', active: true }
-    //         ],
-    //         pageTitle: 'Alert',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/avatar',
-    //       name: 'component-avatar',
-    //       component: () => import('@/views/components/vuesax/avatar/Avatar.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Avatar', active: true }
-    //         ],
-    //         pageTitle: 'Avatar',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/breadcrumb',
-    //       name: 'component-breadcrumb',
-    //       component: () => import('@/views/components/vuesax/breadcrumb/Breadcrumb.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Breadcrumb', active: true }
-    //         ],
-    //         pageTitle: 'Breadcrumb',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/button',
-    //       name: 'component-button',
-    //       component: () => import('@/views/components/vuesax/button/Button.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Button', active: true }
-    //         ],
-    //         pageTitle: 'Button',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/button-group',
-    //       name: 'component-button-group',
-    //       component: () => import('@/views/components/vuesax/button-group/ButtonGroup.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Button Group', active: true }
-    //         ],
-    //         pageTitle: 'Button Group',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/chip',
-    //       name: 'component-chip',
-    //       component: () => import('@/views/components/vuesax/chip/Chip.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Chip', active: true }
-    //         ],
-    //         pageTitle: 'Chip',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/collapse',
-    //       name: 'component-collapse',
-    //       component: () => import('@/views/components/vuesax/collapse/Collapse.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Collapse', active: true }
-    //         ],
-    //         pageTitle: 'Collapse',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/dialogs',
-    //       name: 'component-dialog',
-    //       component: () => import('@/views/components/vuesax/dialogs/Dialogs.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Dialogs', active: true }
-    //         ],
-    //         pageTitle: 'Dialogs',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/divider',
-    //       name: 'component-divider',
-    //       component: () => import('@/views/components/vuesax/divider/Divider.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Divider', active: true }
-    //         ],
-    //         pageTitle: 'Divider',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/dropdown',
-    //       name: 'component-drop-down',
-    //       component: () => import('@/views/components/vuesax/dropdown/Dropdown.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Dropdown', active: true }
-    //         ],
-    //         pageTitle: 'Dropdown',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/list',
-    //       name: 'component-list',
-    //       component: () => import('@/views/components/vuesax/list/List.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'List', active: true }
-    //         ],
-    //         pageTitle: 'List',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/loading',
-    //       name: 'component-loading',
-    //       component: () => import('@/views/components/vuesax/loading/Loading.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Loading', active: true }
-    //         ],
-    //         pageTitle: 'Loading',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/navbar',
-    //       name: 'component-navbar',
-    //       component: () => import('@/views/components/vuesax/navbar/Navbar.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Navbar', active: true }
-    //         ],
-    //         pageTitle: 'Navbar',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/notifications',
-    //       name: 'component-notifications',
-    //       component: () => import('@/views/components/vuesax/notifications/Notifications.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Notifications', active: true }
-    //         ],
-    //         pageTitle: 'Notifications',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/pagination',
-    //       name: 'component-pagination',
-    //       component: () => import('@/views/components/vuesax/pagination/Pagination.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Pagination', active: true }
-    //         ],
-    //         pageTitle: 'Pagination',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/popup',
-    //       name: 'component-popup',
-    //       component: () => import('@/views/components/vuesax/popup/Popup.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Popup', active: true }
-    //         ],
-    //         pageTitle: 'Popup',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/progress',
-    //       name: 'component-progress',
-    //       component: () => import('@/views/components/vuesax/progress/Progress.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Progress', active: true }
-    //         ],
-    //         pageTitle: 'Progress',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/sidebar',
-    //       name: 'component-sidebar',
-    //       component: () => import('@/views/components/vuesax/sidebar/Sidebar.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Sidebar', active: true }
-    //         ],
-    //         pageTitle: 'Sidebar',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/slider',
-    //       name: 'component-slider',
-    //       component: () => import('@/views/components/vuesax/slider/Slider.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Slider', active: true }
-    //         ],
-    //         pageTitle: 'Slider',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/tabs',
-    //       name: 'component-tabs',
-    //       component: () => import('@/views/components/vuesax/tabs/Tabs.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Tabs', active: true }
-    //         ],
-    //         pageTitle: 'Tabs',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/tooltip',
-    //       name: 'component-tooltip',
-    //       component: () => import('@/views/components/vuesax/tooltip/Tooltip.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Tooltip', active: true }
-    //         ],
-    //         pageTitle: 'Tooltip',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/components/upload',
-    //       name: 'component-upload',
-    //       component: () => import('@/views/components/vuesax/upload/Upload.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Components' },
-    //           { title: 'Upload', active: true }
-    //         ],
-    //         pageTitle: 'Upload',
-    //         rule: 'editor'
-    //       }
-    //     },
+        {
+          path: '/components/alert',
+          name: 'component-alert',
+          component: () => import('@/views/components/vuesax/alert/Alert.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Alert', active: true }
+            ],
+            pageTitle: 'Alert',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/avatar',
+          name: 'component-avatar',
+          component: () => import('@/views/components/vuesax/avatar/Avatar.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Avatar', active: true }
+            ],
+            pageTitle: 'Avatar',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/breadcrumb',
+          name: 'component-breadcrumb',
+          component: () => import('@/views/components/vuesax/breadcrumb/Breadcrumb.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Breadcrumb', active: true }
+            ],
+            pageTitle: 'Breadcrumb',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/button',
+          name: 'component-button',
+          component: () => import('@/views/components/vuesax/button/Button.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Button', active: true }
+            ],
+            pageTitle: 'Button',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/button-group',
+          name: 'component-button-group',
+          component: () => import('@/views/components/vuesax/button-group/ButtonGroup.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Button Group', active: true }
+            ],
+            pageTitle: 'Button Group',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/chip',
+          name: 'component-chip',
+          component: () => import('@/views/components/vuesax/chip/Chip.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Chip', active: true }
+            ],
+            pageTitle: 'Chip',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/collapse',
+          name: 'component-collapse',
+          component: () => import('@/views/components/vuesax/collapse/Collapse.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Collapse', active: true }
+            ],
+            pageTitle: 'Collapse',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/dialogs',
+          name: 'component-dialog',
+          component: () => import('@/views/components/vuesax/dialogs/Dialogs.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Dialogs', active: true }
+            ],
+            pageTitle: 'Dialogs',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/divider',
+          name: 'component-divider',
+          component: () => import('@/views/components/vuesax/divider/Divider.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Divider', active: true }
+            ],
+            pageTitle: 'Divider',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/dropdown',
+          name: 'component-drop-down',
+          component: () => import('@/views/components/vuesax/dropdown/Dropdown.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Dropdown', active: true }
+            ],
+            pageTitle: 'Dropdown',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/list',
+          name: 'component-list',
+          component: () => import('@/views/components/vuesax/list/List.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'List', active: true }
+            ],
+            pageTitle: 'List',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/loading',
+          name: 'component-loading',
+          component: () => import('@/views/components/vuesax/loading/Loading.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Loading', active: true }
+            ],
+            pageTitle: 'Loading',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/navbar',
+          name: 'component-navbar',
+          component: () => import('@/views/components/vuesax/navbar/Navbar.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Navbar', active: true }
+            ],
+            pageTitle: 'Navbar',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/notifications',
+          name: 'component-notifications',
+          component: () => import('@/views/components/vuesax/notifications/Notifications.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Notifications', active: true }
+            ],
+            pageTitle: 'Notifications',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/pagination',
+          name: 'component-pagination',
+          component: () => import('@/views/components/vuesax/pagination/Pagination.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Pagination', active: true }
+            ],
+            pageTitle: 'Pagination',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/popup',
+          name: 'component-popup',
+          component: () => import('@/views/components/vuesax/popup/Popup.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Popup', active: true }
+            ],
+            pageTitle: 'Popup',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/progress',
+          name: 'component-progress',
+          component: () => import('@/views/components/vuesax/progress/Progress.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Progress', active: true }
+            ],
+            pageTitle: 'Progress',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/sidebar',
+          name: 'component-sidebar',
+          component: () => import('@/views/components/vuesax/sidebar/Sidebar.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Sidebar', active: true }
+            ],
+            pageTitle: 'Sidebar',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/slider',
+          name: 'component-slider',
+          component: () => import('@/views/components/vuesax/slider/Slider.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Slider', active: true }
+            ],
+            pageTitle: 'Slider',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/tabs',
+          name: 'component-tabs',
+          component: () => import('@/views/components/vuesax/tabs/Tabs.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Tabs', active: true }
+            ],
+            pageTitle: 'Tabs',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/tooltip',
+          name: 'component-tooltip',
+          component: () => import('@/views/components/vuesax/tooltip/Tooltip.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Tooltip', active: true }
+            ],
+            pageTitle: 'Tooltip',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/components/upload',
+          name: 'component-upload',
+          component: () => import('@/views/components/vuesax/upload/Upload.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Components' },
+              { title: 'Upload', active: true }
+            ],
+            pageTitle: 'Upload',
+            rule: 'editor'
+          }
+        },
 
 
     //     // =============================================================================
@@ -913,34 +913,34 @@ const router = new Router({
     //     // =============================================================================
     //     // Pages Routes
     //     // =============================================================================
-    //     {
-    //       path: '/pages/profile',
-    //       name: 'page-profile',
-    //       component: () => import('@/views/pages/Profile.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Pages' },
-    //           { title: 'Profile', active: true }
-    //         ],
-    //         pageTitle: 'Profile',
-    //         rule: 'editor'
-    //       }
-    //     },
-    //     {
-    //       path: '/pages/user-settings',
-    //       name: 'page-user-settings',
-    //       component: () => import('@/views/pages/user-settings/UserSettings.vue'),
-    //       meta: {
-    //         breadcrumb: [
-    //           { title: 'Home', url: '/' },
-    //           { title: 'Pages' },
-    //           { title: 'User Settings', active: true }
-    //         ],
-    //         pageTitle: 'Settings',
-    //         rule: 'editor'
-    //       }
-    //     },
+        {
+          path: '/pages/profile',
+          name: 'page-profile',
+          component: () => import('@/views/pages/Profile.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Pages' },
+              { title: 'Profile', active: true }
+            ],
+            pageTitle: 'Profile',
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/pages/user-settings',
+          name: 'page-user-settings',
+          component: () => import('@/views/pages/user-settings/UserSettings.vue'),
+          meta: {
+            breadcrumb: [
+              { title: 'Home', url: '/' },
+              { title: 'Pages' },
+              { title: 'User Settings', active: true }
+            ],
+            pageTitle: 'Settings',
+            rule: 'editor'
+          }
+        },
     //     {
     //       path: '/pages/faq',
     //       name: 'page-faq',
@@ -1412,14 +1412,14 @@ const router = new Router({
             rule: 'editor'
           }
         },
-        {
-          path: '/pages/maintenance',
-          name: 'page-maintenance',
-          component: () => import('@/views/pages/Maintenance.vue'),
-          meta: {
-            rule: 'editor'
-          }
-        }
+        // {
+        //   path: '/pages/maintenance',
+        //   name: 'page-maintenance',
+        //   component: () => import('@/views/pages/Maintenance.vue'),
+        //   meta: {
+        //     rule: 'editor'
+        //   }
+        // }
       ]
     },
     // Redirect to 404 page, if no match found

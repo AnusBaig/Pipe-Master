@@ -1,6 +1,8 @@
 <template>
     <div>
-Result
+        <div class="flex justify-around text-center">
+        <vs-button size="large" to="/requirement">Back</vs-button>
+        </div>
     </div>
 </template>
 

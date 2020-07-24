@@ -14,18 +14,21 @@
   <div class="vx-navbar-wrapper navbar-full p-0">
     <vs-navbar class="navbar-custom navbar-skelton" :class="navbarClasses"  :style="navbarStyle" :color="navbarColor">
 
-      <bookmarks :navbarColor="navbarColor" v-if="windowWidth >= 992" />
+      <!-- <bookmarks :navbarColor="navbarColor" v-if="windowWidth >= 992" /> -->
 
       <router-link tag="div" to="/" class="vx-logo cursor-pointer mx-auto flex items-center">
         <logo class="w-10 mr-4 fill-current text-primary" />
-        <span class="vx-logo-text text-primary">Vuexy</span>
+        <span class="vx-logo-text text-primary">Pipe Master</span>
       </router-link>
 
       <i18n />
 
-      <search-bar />
+      <span class="mr-5"/>
 
-      <cart-drop-down />
+
+      <!-- <search-bar /> -->
+
+      <!-- <cart-drop-down /> -->
 
       <notification-drop-down />
 
