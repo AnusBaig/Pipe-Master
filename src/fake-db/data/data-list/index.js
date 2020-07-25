@@ -6,28 +6,23 @@ const data = {
       'id': 1,
       'pieces': 5,
       'length': 7
-    },
-    {
-      'id': 2,
-      'pieces': 10,
-      'length': 2
-    },
-    {
-      'id': 3,
-      'pieces': 7,
-      'length': 9
     }
   ],
   reqs: [
     {
       'id': 1,
-      'pieces': 15,
-      'length': 8
+      'pieces': 10,
+      'length': 4
     },
     {
       'id': 2,
-      'pieces': 1,
-      'length': 2
+      'pieces': 4,
+      'length': 7
+    },
+    {
+      'id': 3,
+      'pieces': 15,
+      'length': 8
     }
   ]
 }

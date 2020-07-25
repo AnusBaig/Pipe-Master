@@ -119,6 +119,8 @@ Vue.use(VueGoogleMaps, {
   }
 })
 
+
+
 // Vuejs - Vue wrapper for hammerjs
 import { VueHammer } from 'vue2-hammer'
 Vue.use(VueHammer)
@@ -128,10 +130,27 @@ Vue.use(VueHammer)
 import 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
 
+// Print
+import VueHtmlToPaper from 'vue-html-to-paper'
+
+const options = {
+  name: '_blank',
+  specs: [
+    'fullscreen=yes',
+    'titlebar=yes',
+    'scrollbars=yes'
+  ],
+  styles: [
+    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
+    'https://unpkg.com/kidlat-css/css/kidlat.css',
+    './assets/css/main.css'
+  ]
+}
+
+Vue.use(VueHtmlToPaper , options)
 
 // Feather font icon
 require('./assets/css/iconfont.css')
-
 
 // Vue select css
 // Note: In latest version you have to add it separately

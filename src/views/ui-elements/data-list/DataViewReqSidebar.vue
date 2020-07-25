@@ -41,16 +41,23 @@
         <span class="text-danger text-sm" v-show="errors.has('item-name')">{{ errors.first('item-name') }}</span>
          -->
 
+        <!-- NAME -->
+        <vs-input label="Pieces" v-model="dataPieces" class="mt-5 w-full" name="item-name" v-validate="'required'" />
+        <!-- <span class="text-danger text-sm" v-show="errors.has('item-name')">{{ errors.first('item-name') }}</span> -->
+
+        <vs-input label="Length" v-model="dataLength" class="mt-5 w-full" name="item-name" v-validate="'required'" />
+         <!-- <span class="text-danger text-sm" v-show="errors.has('item-name')">{{ errors.first('item-name') }} -->
+
         <!-- Pieces -->
-        <vs-select v-model="dataPieces" label="Pieces" class="mt-5 w-full" name="pieces" v-validate="'required'">
+        <!-- <vs-select v-model="dataPieces" label="Pieces" class="mt-5 w-full" name="pieces" v-validate="'required'">
           <vs-select-item :key="item" :value="item" :text="item" v-for="item in 20" />
-        </vs-select>
+        </vs-select> -->
         <!-- <span class="text-danger text-sm" v-show="errors.has('item-category')">{{ errors.first('item-category') }}</span> -->
 
         <!-- Length -->
-        <vs-select v-model="dataLength" label="Length" class="mt-5 w-full" name="length" v-validate="'required'">
+        <!-- <vs-select v-model="dataLength" label="Length" class="mt-5 w-full" name="length" v-validate="'required'">
           <vs-select-item :key="item" :value="item" :text="item" v-for="item in 50" />
-        </vs-select>
+        </vs-select> -->
 
         <!-- ORDER STATUS -->
         <!-- <vs-select v-model="dataOrder_status" label="Order Status" class="mt-5 w-full">
