@@ -9,7 +9,7 @@
 
 
 module.exports = {
-  publicPath: '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/Pipe-Master/dist/' : '/',
   transpileDependencies: [
     'vue-echarts',
     'resize-detector'
