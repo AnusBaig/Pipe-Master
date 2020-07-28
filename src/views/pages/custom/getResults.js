@@ -58,7 +58,7 @@ export default function getCuts(){
 
             if(pipe.stock.size<=500 && pipe.stock.size>=200) factor=2
             else if(pipe.stock.size<=1000 && pipe.stock.size>=500) factor=10
-            else if(pipe.stock.size<=10000 && pipe.stock.size>=1000) factor=100
+            else if(pipe.stock.size<=10000 && pipe.stock.size>=1000) factor=60
             else if(pipe.stock.size<=100000 && pipe.stock.size>=10000) factor=500
             else if(pipe.stock.size<=200000 && pipe.stock.size>=100000) factor=1000
             else if(pipe.stock.size<=300000 && pipe.stock.size>=300000) factor=3000
