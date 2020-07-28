@@ -46,6 +46,8 @@
         <!-- <span class="text-danger text-sm" v-show="errors.has('item-name')">{{ errors.first('item-name') }}</span> -->
 
         <vs-input label="Length" v-model="dataLength" class="mt-5 w-full" name="item-name" v-validate="'required'" />
+        <span class="text-info text-sm">Enter values in inches</span>        
+
          <!-- <span class="text-danger text-sm" v-show="errors.has('item-name')">{{ errors.first('item-name') }} -->
 
         <!-- Pieces -->

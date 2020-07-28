@@ -37,12 +37,12 @@
         </template> -->
 
         <!-- NAME -->
+
         <vs-input label="Pieces" v-model="dataPieces" class="mt-5 w-full" name="item-name" v-validate="'required'" />
         <!-- <span class="text-danger text-sm" v-show="errors.has('item-name')">{{ errors.first('item-name') }}</span> -->
 
         <vs-input label="Length" v-model="dataLength" class="mt-5 w-full" name="item-name" v-validate="'required'" />
-         <!-- <span class="text-danger text-sm" v-show="errors.has('item-name')">{{ errors.first('item-name') }}</span>  -->
-        
+         <span class="text-info text-sm">Enter values in inches</span>        
 
         <!-- Pieces -->
         <!-- <vs-select v-model="dataPieces" label="Pieces" class="mt-5 w-full" name="pieces" v-validate="'required'">

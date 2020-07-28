@@ -1,7 +1,7 @@
 <template>
-<div id="holder" style="position:relative;margin:0 auto;">
-  <canvas ref="canvas" style="position:absolute;top:0;left:0"></canvas>
-  <canvas ref="textCanvas" style="position:absolute;top:0;left:0"></canvas>
+<div id="holder" style="position:relative;margin:0 auto;" class="overflow-scroll">
+  <canvas ref="canvas" style="position:absolute;top:0;left:0" class="overflow-scroll"></canvas>
+  <canvas ref="textCanvas" style="position:absolute;top:0;left:0" class="overflow-scroll"></canvas>
 </div>
 </template>
 <script>
@@ -11,10 +11,11 @@ export default {
       startingPoint:{x:0,y:0},
       linesArray:[],
       marginBetweenLines:40,
-      scaleFactor:20,
       textCanvas:"",
       textCanvasContext:"",
       lineWidth:30,
+      // width:1200,
+      // height:600
       
     }
   },
@@ -23,31 +24,41 @@ export default {
       type:Number,
       default:1
     },
+    scaleFactor:{
+      type:Number,
+      default:10
+    },
     outputArray:{
       type:Array,
       required:true
-    },
-    width:{
-      type:Number,
-      required:true
-    },
-    height:{
-      type:Number,
-      required:true
     }
+    // width:{
+    //   type:Number,
+    //   required:true
+    // },
+    // height:{
+    //   type:Number,
+    //   required:true
+    // }
   },
   computed:{
     outputArr(){
       return this.outputArray;
+    },
+    width(){
+      return window.innerWidth/1.5
+    },
+    height(){
+      return window.innerHeight/1.2
     }
   },
   watch:{
-    width:function(val){
-      this.$forceUpdate();
-    },
-    height:function(val){
-      this.$forceUpdate();
-    },
+    // width:function(val){
+    //   this.$forceUpdate();
+    // },
+    // height:function(val){
+    //   this.$forceUpdate();
+    // },
     scale:function(val){
       this.$forceUpdate();
     }
@@ -59,14 +70,16 @@ export default {
      holder.setProperty('--canvasWidth',this.width + "px");
      holder.setProperty('--canvasHeight',this.height + "px");
       
+      // this.width=window.innerWidth;
+      // this.height=window.innerHeight;
 
       this.textCanvas=this.$refs.textCanvas;
-      this.textCanvas.style.width ='100%';
-      this.textCanvas.style.height='100%';
+      this.textCanvas.style.width ='400%';
+      this.textCanvas.style.height='400%';
       // this.textCanvas.width=this.textCanvas.offsetWidth;
       // this.textCanvas.height=this.textCanvas.offsetHeight;
-      this.textCanvas.width=window.innerWidth;
-      this.textCanvas.height=window.innerHeight;
+      this.textCanvas.width=window.innerWidth*4;
+      this.textCanvas.height=window.innerHeight*4;
       this.textCanvasContext=this.textCanvas.getContext('2d');
       this.textCanvasContext.scale(this.scale,this.scale);
       
@@ -81,7 +94,8 @@ export default {
           
           this.linesArray.push({
             stock:that.outputArr[i].stock.size,
-            cuts:that.outputArr[i].cuts
+            cuts:that.outputArr[i].cuts,
+            factor:this.outputArr[i].factor
             });
 
         }
@@ -90,16 +104,16 @@ export default {
     mapToPoints(){
      var marginBetweenIndex=0;
 
-     var maxSum=this.linesArray[0].cuts.reduce((prev,next)=>prev+next);
-     var largest=this.linesArray[0];
-     this.linesArray.forEach((val,i)=>{
-        var sum=val.cuts.reduce((prev,next)=>prev+next);
-        if(sum>maxSum)
-          {
-            maxSum=sum;
-            largest=this.linesArray[i];
-          }
-     });
+    //  var maxSum=this.linesArray[0].cuts.reduce((prev,next)=>prev+next);
+    //  var largest=this.linesArray[0];
+    //  this.linesArray.forEach((val,i)=>{
+    //     var sum=val.cuts.reduce((prev,next)=>prev+next);
+    //     if(sum>maxSum)
+    //       {
+    //         maxSum=sum;
+    //         largest=this.linesArray[i];
+    //       }
+    //  });
 
 
      for (const key in this.linesArray) {
@@ -119,12 +133,12 @@ export default {
       
      }
 
-     var margin=(this.textCanvas.width-(largest.points[largest.points.length-1].x-largest.points[0].x))/2;
-     this.linesArray.forEach((val,i)=>{
-       val.points.forEach((point,j)=>{
-         point.x+=margin;
-       });
-     });
+    //  var margin=(this.textCanvas.width-(largest.points[largest.points.length-1].x-largest.points[0].x))/2;
+    //  this.linesArray.forEach((val,i)=>{
+    //    val.points.forEach((point,j)=>{
+    //      point.x+=margin;
+    //    });
+    //  });
      
     },
     renderLines(){
@@ -135,12 +149,12 @@ export default {
       // console.log(this.linesArray);
       
       var canvas=this.$refs.canvas;
-      canvas.style.width ='100%';
-      canvas.style.height='100%';
+      canvas.style.width ='400%';
+      canvas.style.height='400%';
       // canvas.width=canvas.offsetWidth;
       // canvas.height=canvas.offsetHeight;
-      canvas.width=window.innerWidth;
-      canvas.height=window.innerHeight;
+      canvas.width=window.innerWidth*4;
+      canvas.height=window.innerHeight*4;
       var context=canvas.getContext('2d');
       context.scale(this.scale,this.scale);
       
@@ -183,16 +197,17 @@ export default {
     renderTextPoints()
     {
         this.linesArray.forEach((val,i)=>{
+          let factor=val.factor;
           val.cuts.forEach((cut,j)=>{
           this.textCanvasContext.beginPath();
-          this.textCanvasContext.font = '18px Roboto ';
+          this.textCanvasContext.font = '15px Roboto ';
           this.textCanvasContext.textAlign = "center";
           this.textCanvasContext.textBaseline = "center";
           this.textCanvasContext.fillStyle = "white";
           if(cut==1)
-          this.textCanvasContext.fillText(cut,val.points[j].x+10,val.points[j].y+5);
+          this.textCanvasContext.fillText(cut*factor,val.points[j].x+10,val.points[j].y+5);
           else
-          this.textCanvasContext.fillText(cut,val.points[j].x+20,val.points[j].y+5);
+          this.textCanvasContext.fillText(cut*factor,val.points[j].x+20,val.points[j].y+5);
           this.textCanvasContext.closePath();
           });
         });
@@ -222,7 +237,7 @@ export default {
             this.textCanvasContext.textBaseline = "middle";
             this.textCanvasContext.fillStyle = "black";
             this.textCanvasContext.font = `${this.lineWidth}px Segoe UI `;
-            this.textCanvasContext.fillText('|',point.x,point.y);
+            this.textCanvasContext.fillText(' | ',point.x,point.y);
             this.textCanvasContext.closePath();
           });
         });
@@ -248,7 +263,6 @@ export default {
     this.renderSplitters();
     this.renderNumbers();
   }
-
 }
 </script>
 <style >
