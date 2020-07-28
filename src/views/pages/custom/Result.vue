@@ -129,6 +129,5 @@ StringBuilder.prototype.toString = function () {
 
 </script>
 
-<style lang="sass" scoped>
-
+<style >
 </style>

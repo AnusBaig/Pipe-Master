@@ -74,12 +74,12 @@ export default {
       // this.height=window.innerHeight;
 
       this.textCanvas=this.$refs.textCanvas;
-      this.textCanvas.style.width ='400%';
-      this.textCanvas.style.height='400%';
+      this.textCanvas.style.width ='600%';
+      this.textCanvas.style.height='600%';
       // this.textCanvas.width=this.textCanvas.offsetWidth;
       // this.textCanvas.height=this.textCanvas.offsetHeight;
-      this.textCanvas.width=window.innerWidth*4;
-      this.textCanvas.height=window.innerHeight*4;
+      this.textCanvas.width=window.innerWidth*6;
+      this.textCanvas.height=window.innerHeight*6;
       this.textCanvasContext=this.textCanvas.getContext('2d');
       this.textCanvasContext.scale(this.scale,this.scale);
       
@@ -149,12 +149,12 @@ export default {
       // console.log(this.linesArray);
       
       var canvas=this.$refs.canvas;
-      canvas.style.width ='400%';
-      canvas.style.height='400%';
+      canvas.style.width ='600%';
+      canvas.style.height='600%';
       // canvas.width=canvas.offsetWidth;
       // canvas.height=canvas.offsetHeight;
-      canvas.width=window.innerWidth*4;
-      canvas.height=window.innerHeight*4;
+      canvas.width=window.innerWidth*6;
+      canvas.height=window.innerHeight*6;
       var context=canvas.getContext('2d');
       context.scale(this.scale,this.scale);
       
@@ -200,7 +200,7 @@ export default {
           let factor=val.factor;
           val.cuts.forEach((cut,j)=>{
           this.textCanvasContext.beginPath();
-          this.textCanvasContext.font = '15px Roboto ';
+          this.textCanvasContext.font = '1.4rem Roboto ';
           this.textCanvasContext.textAlign = "center";
           this.textCanvasContext.textBaseline = "center";
           this.textCanvasContext.fillStyle = "white";
@@ -211,24 +211,6 @@ export default {
           this.textCanvasContext.closePath();
           });
         });
-
-        // this.linesArray.forEach((val,i) => {
-        //   var initialPosX=(this.linesArray[i].points[1].x-this.linesArray[i].points[0].x)/2;
-        //   var initialPosY=this.linesArray[i].points[0].y;
-        //   this.linesArray[i].cuts.forEach((cut,j)=>{
-        //   this.textCanvasContext.beginPath();
-        //   this.textCanvasContext.font = '18px Segoe UI ';
-        //   this.textCanvasContext.textAlign = "center";
-        //   this.textCanvasContext.textBaseline = "center";
-        //   this.textCanvasContext.fillStyle = "white";
-        //   this.textCanvasContext.fillText(cut,initialPosX,initialPosY+5);
-          
-        //   this.textCanvasContext.closePath();
-        //   initialPosX+=(cut*this.scaleFactor);
-
-        //   });
-        // });
-    
     },
     renderSplitters(){
         this.linesArray.forEach((val,i)=>{
@@ -237,7 +219,7 @@ export default {
             this.textCanvasContext.textBaseline = "middle";
             this.textCanvasContext.fillStyle = "black";
             this.textCanvasContext.font = `${this.lineWidth}px Segoe UI `;
-            this.textCanvasContext.fillText(' | ',point.x,point.y);
+            this.textCanvasContext.fillText('|',point.x,point.y);
             this.textCanvasContext.closePath();
           });
         });
@@ -265,7 +247,7 @@ export default {
   }
 }
 </script>
-<style >
+<style scoped>
 :root{
   --canvasWidth:1100;
   --canvasHeight:500;
