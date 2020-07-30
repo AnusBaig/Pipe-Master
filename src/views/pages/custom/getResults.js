@@ -1,7 +1,6 @@
 import MaterialStore from '../../../store/data-list/moduleDataList.js'
 import RequirementStore from '../../../store/data-list-req/moduleDataList.js'
 import { howToCutBoards1D } from 'stock-cutting'
-import { _ } from 'core-js'
 
 // function print(obj) {
 //     // console.log(inspect(obj, false, null, true))
@@ -98,7 +97,3 @@ export default function getCuts(){
         return ''
     }
 }
-// print({ stockSizes, input, output })
-
-
-
