@@ -17,7 +17,7 @@ function setInputs(){
     const materials = MaterialStore.state.products
     const requirements = RequirementStore.state.products
     
-    let bladeSize = 0;
+    let bladeSize = 0
     
     let stockSizes = []
     for(let material of materials){
