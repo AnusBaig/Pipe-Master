@@ -2,4 +2,6 @@ self.addEventListener('install',e=>console.log('[Service Worker] Installing ... 
 
 self.addEventListener('activate',e=>console.log('[Service Worker] Activating ... ', e))
 
-self.addEventListener('fetch',() => console.log('[Service Worker] Fetching ... '))
+self.addEventListener('fetch',() => {
+    console.log('[Service Worker] Fetching ... ')
+})
